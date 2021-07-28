@@ -1,3 +1,7 @@
+export AWS_ACCESS_KEY_ID=
+export AWS_SECRET_ACCESS_KEY=
+export AWS_DEFAULT_REGION=us-east-2
+
 $ ssh-keygen -y -f MyKeyPair.pem > $HOME/.ssh/id_rsa_MyKeyPair.pub
 $ AWS_REGIONS="$(aws ec2 describe-regions --query 'Regions[].RegionName' --output text)"
 $ for each_region in ${AWS_REGIONS} ; do aws ec2 import-key-pair --key-name MyKeyPair --public-key-material fileb://$HOME/.ssh/id_rsa_MyKeyPair.pub --region $each_region ; done
