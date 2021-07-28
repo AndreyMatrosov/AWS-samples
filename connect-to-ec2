@@ -1,0 +1,11 @@
+sudo apt-get install openssh-client
+sudo apt-get install openssh-server
+
+ssh -i "k8s.pem" ubuntu@ec2-18-118-164-219.us-east-2.compute.amazonaws.com
+
+#Retrieve the public key from the private key
+ssh-keygen -y -f /path_to_key_pair/my-key-pair.pem
+chmod 400 my-key-pair.pem
+
+#Locate the public key on an instance
+[ec2-user ~]$ nano ~/.ssh/authorized_keys
